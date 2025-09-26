@@ -791,12 +791,14 @@
     {
       "type": "file",
       "name": "build.gradle.kts",
+      "conflict": "overwrite",
       "format": "url",
       "data": "template/build.gradle.kts"
     },
     {
       "type": "file",
       "name": "settings.gradle.kts",
+      "conflict": "overwrite",
       "format": "url",
       "data": "template/settings.gradle.kts"
     }
