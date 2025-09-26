@@ -23,10 +23,6 @@ version = "0.0.1-SNAPSHOT"
 cap4kCodegen {
     basePackage.set("com.example.demo")
     archTemplate.set(file("cap4k-ddd-codegen-template-multi-nested.json"))
-    designFiles.from(
-        file("design/role/_gen.txt"),
-        file("design/role/_gen_01.txt"),
-    )
 
     database {
         url.set("jdbc:mysql://localhost:3306/demo_db?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai")
