@@ -1,6 +1,6 @@
 plugins {
     id("buildsrc.convention.kotlin-jvm")
-    id("com.only4.cap4k.ddd.codegen") version "0.3.4-SNAPSHOT"
+    id("com.only4.cap4k.ddd.codegen") version "0.3.5-SNAPSHOT"
 }
 
 dependencies {
@@ -19,7 +19,7 @@ kotlin {
 
 cap4kCodegen {
     basePackage.set("${basePackage}")
-    archTemplate.set("${archTemplate}")
+    archTemplate.set(file("${archTemplate}"))
 
     database {
         url.set("${dbUrl}")
