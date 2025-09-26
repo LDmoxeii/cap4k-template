@@ -1,6 +1,6 @@
 plugins {
     id("buildsrc.convention.kotlin-jvm")
-    id("com.only4.cap4k.ddd.codegen") version "0.3.3-SNAPSHOT"
+    id("com.only4.cap4k.ddd.codegen") version "0.3.4-SNAPSHOT"
 }
 
 dependencies {
