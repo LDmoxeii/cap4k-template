@@ -1,7 +1,6 @@
-
 plugins {
     id("buildsrc.convention.kotlin-jvm")
-    id("com.only4.cap4k.ddd.codegen")
+    id("com.only4.cap4k.ddd.codegen") version "0.3.3-SNAPSHOT"
 }
 
 dependencies {
@@ -19,20 +18,22 @@ kotlin {
 }
 
 cap4kCodegen {
-    basePackage.set("com.example.demo")
-    archTemplate.set("cap4k-ddd-codegen-template-multi-nested.json")
+    basePackage.set("${basePackage}")
+    archTemplate.set("${archTemplate}")
 
     database {
-        url.set("jdbc:mysql://localhost:3306/demo_db?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai")
-        username.set("root")
-        password.set("123456")
-        schema.set("demo_db")
+        url.set("${dbUrl}")
+        username.set("${dbUsername}")
+        password.set("${dbPassword}")
+        schema.set("${dbSchema}")
+        tables.set("${dbTables}")
+        ignoreTables.set("${dbIgnoreTables}")
     }
 
     generation {
-        versionField.set("version")
-        deletedField.set("deleted")
-        readonlyFields.set("id,created_at,updated_at")
-        ignoreFields.set("")
+        versionField.set("${versionField}")
+        deletedField.set("${deletedField}")
+        readonlyFields.set("${readonlyFields}")
+        ignoreFields.set("${ignoreFields}")
     }
 }
