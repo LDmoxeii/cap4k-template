@@ -790,6 +790,13 @@
     },
     {
       "type": "file",
+      "name": "gradle.properties",
+      "conflict": "overwrite",
+      "format": "url",
+      "data": "template/gradle.properties"
+    },
+    {
+      "type": "file",
       "name": "build.gradle.kts",
       "conflict": "overwrite",
       "format": "url",
