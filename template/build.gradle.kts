@@ -20,7 +20,7 @@ kotlin {
 
 cap4kCodegen {
     basePackage.set("${basePackage}")
-    archTemplate.set(file("${archTemplate}"))
+    archTemplate.set("${archTemplate}")
 
     database {
         url.set("${dbUrl}")
