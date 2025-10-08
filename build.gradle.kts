@@ -1,6 +1,6 @@
 plugins {
     kotlin("jvm") version "2.1.20"
-    id("com.only4.cap4k.ddd.codegen") version "0.3.11-SNAPSHOT"
+    id("com.only4.cap4k.ddd.codegen") version "0.3.12-SNAPSHOT"
 }
 
 dependencies {
