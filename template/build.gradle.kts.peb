@@ -1,0 +1,40 @@
+// [cap4k-ddd-codegen-gradle-plugin:do-not-overwrite]
+plugins {
+    id("buildsrc.convention.kotlin-jvm")
+    id("com.only.codegen")
+}
+
+dependencies {
+    implementation("org.jetbrains.kotlin:kotlin-stdlib")
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
+
+kotlin {
+    jvmToolchain(17)
+}
+
+codegen {
+    basePackage.set("{{ basePackage }}")
+    archTemplate.set("{{ archTemplate }}")
+
+    database {
+        url.set("{{ dbUrl }}")
+        username.set("{{ dbUsername }}")
+        password.set("{{ dbPassword }}")
+        schema.set("{{ dbSchema }}")
+        tables.set("{{ dbTables }}")
+        ignoreTables.set("{{ dbIgnoreTables }}")
+    }
+
+    generation {
+        versionField.set("{{ versionField }}")
+        deletedField.set("{{ deletedField }}")
+        readonlyFields.set("{{ readonlyFields }}")
+        ignoreFields.set("{{ ignoreFields }}")
+    }
+}

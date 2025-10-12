@@ -1,6 +1,7 @@
+// [cap4k-ddd-codegen-gradle-plugin:do-not-overwrite]
 plugins {
-    kotlin("jvm") version "2.1.20"
-    id("com.only4.cap4k.ddd.codegen") version "0.3.12-SNAPSHOT"
+    id("buildsrc.convention.kotlin-jvm")
+    id("com.only.codegen")
 }
 
 dependencies {
@@ -17,10 +18,7 @@ kotlin {
     jvmToolchain(17)
 }
 
-group = "edu.only4"
-version = "0.0.1-SNAPSHOT"
-
-cap4kCodegen {
+codegen {
     basePackage.set("com.example.demo")
     archTemplate.set("cap4k-ddd-codegen-template-multi-nested.json")
 
@@ -29,6 +27,8 @@ cap4kCodegen {
         username.set("root")
         password.set("123456")
         schema.set("demo_db")
+        tables.set("")
+        ignoreTables.set("")
     }
 
     generation {

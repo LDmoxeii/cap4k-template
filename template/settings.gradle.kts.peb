@@ -28,7 +28,6 @@ dependencyResolutionManagement {
     // Use Maven Central as the default repository (where Gradle will download dependencies) in all subprojects.
     @Suppress("UnstableApiUsage")
     repositories {
-        mavenLocal()  // 支持本地 Maven 仓库
         maven {
             credentials {
                 username = providers.gradleProperty("aliyun.maven.username").get()
@@ -56,13 +55,12 @@ plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
 }
 
-include("codegen-plugin-template-adapter")
-include("codegen-plugin-template-application")
-include("codegen-plugin-template-domain")
+include("{{ artifactId }}-adapter")
+include("{{ artifactId }}-application")
+include("{{ artifactId }}-domain")
 
-rootProject.name = "codegen-plugin-template"
+rootProject.name = "{{ artifactId }}"
 
-include("codegen-plugin-template-start")
+include("{{ artifactId }}-start")
 
 includeBuild("../codegen-plugin")
-
