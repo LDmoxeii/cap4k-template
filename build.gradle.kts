@@ -1,4 +1,3 @@
-// [cap4k-ddd-codegen-gradle-plugin:do-not-overwrite]
 plugins {
     kotlin("jvm") version "2.1.20"
     id("com.only.codegen")
