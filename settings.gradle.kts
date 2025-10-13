@@ -1,3 +1,5 @@
+import jdk.tools.jlink.resources.plugins
+
 // The settings file is the entry point of every Gradle build.
 // Its primary purpose is to define the subprojects.
 // It is also used for some aspects of project-wide configuration, like managing plugins, dependencies, etc.
@@ -5,6 +7,7 @@
 
 pluginManagement {
     repositories {
+        mavenLocal()
         maven {
             credentials {
                 username = providers.gradleProperty("aliyun.maven.username").get()
@@ -28,7 +31,7 @@ dependencyResolutionManagement {
     // Use Maven Central as the default repository (where Gradle will download dependencies) in all subprojects.
     @Suppress("UnstableApiUsage")
     repositories {
-        mavenLocal()  // 支持本地 Maven 仓库
+        mavenLocal()
         maven {
             credentials {
                 username = providers.gradleProperty("aliyun.maven.username").get()
@@ -56,13 +59,7 @@ plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
 }
 
-include("codegen-plugin-template-adapter")
-include("codegen-plugin-template-application")
-include("codegen-plugin-template-domain")
-
 rootProject.name = "codegen-plugin-template"
-
-include("codegen-plugin-template-start")
 
 includeBuild("../codegen-plugin")
 
