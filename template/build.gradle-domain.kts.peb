@@ -1,7 +1,7 @@
 plugins {
     id("buildsrc.convention.kotlin-jvm")
     kotlin("kapt")
-    id("com.google.devtools.ksp") version "2.1.20-2.0.0"  // 匹配 Kotlin 2.1.20
+    id("com.google.devtools.ksp") version "2.1.20-2.0.0"
 }
 
 dependencies {
@@ -16,8 +16,7 @@ dependencies {
 
     api(libs.ddd.starter)
 
-    // KSP processor - 从本地 Maven 仓库引用
-    ksp("com.only:ksp-processor:1.0.0")
+    ksp("com.only:ksp-processor:0.1.0-SNAPSHOT")
 }
 
 kapt {
