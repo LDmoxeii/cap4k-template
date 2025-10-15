@@ -1,6 +1,6 @@
 plugins {
     kotlin("jvm") version "2.1.20"
-    id("com.only.codegen")
+    id("com.only4.codegen") version "0.1.0-SNAPSHOT"
 }
 
 dependencies {
@@ -20,6 +20,9 @@ kotlin {
 codegen {
     basePackage.set("com.example.demo")
     archTemplate.set("cap4k-ddd-codegen-template-multi-nested.json")
+    designFiles.from(fileTree("design") {
+        include("**/*_gen.json")
+    })
 
     database {
         url.set("jdbc:mysql://localhost:3306/demo_db?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai")

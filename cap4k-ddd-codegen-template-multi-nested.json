@@ -1,5 +1,174 @@
 {
   "type": "root",
+  "templates": [
+    {
+      "type": "dir",
+      "tag": "command",
+      "name": "{{ path }}",
+      "children": [
+      ]
+    },
+    {
+      "type": "dir",
+      "tag": "saga",
+      "name": "{{ path }}",
+      "children": [
+      ]
+    },
+    {
+      "type": "dir",
+      "tag": "query",
+      "name": "{{ path }}",
+      "pattern": "^(?!.*(List|list|Page|page)).*$",
+      "children": [
+      ]
+    },
+    {
+      "type": "dir",
+      "tag": "query",
+      "name": "{{ path }}",
+      "pattern": "^.*(List|list).*$",
+      "children": [
+      ]
+    },
+    {
+      "type": "dir",
+      "tag": "query",
+      "name": "{{ path }}",
+      "pattern": "^.*(Page|page).*$",
+      "children": [
+      ]
+    },
+    {
+      "type": "dir",
+      "tag": "query_handler",
+      "name": "",
+      "pattern": "^(?!.*(List|list|Page|page)).*$",
+      "children": [
+      ]
+    },
+    {
+      "type": "dir",
+      "tag": "query_handler",
+      "name": "",
+      "pattern": "^.*(List|list).*$",
+      "children": [
+      ]
+    },
+    {
+      "type": "dir",
+      "tag": "query_handler",
+      "name": "",
+      "pattern": "^.*(Page|page).*$",
+      "children": [
+      ]
+    },
+    {
+      "type": "dir",
+      "tag": "client",
+      "name": "{{ path }}",
+      "children": [
+      ]
+    },
+    {
+      "type": "dir",
+      "tag": "client_handler",
+      "name": "{{ path }}",
+      "children": [
+      ]
+    },
+    {
+      "type": "dir",
+      "tag": "integration_event",
+      "name": "",
+      "children": [
+      ]
+    },
+    {
+      "type": "dir",
+      "tag": "integration_event_handler",
+      "name": "",
+      "children": [
+      ]
+    },
+    {
+      "type": "dir",
+      "tag": "domain_service",
+      "name": "{{ path }}",
+      "children": [
+      ]
+    },
+    {
+      "type": "dir",
+      "tag": "repository",
+      "name": "{{ path }}",
+      "children": [
+      ]
+    },
+    {
+      "type": "dir",
+      "tag": "schema",
+      "name": "{{ path }}",
+      "children": [
+      ]
+    },
+    {
+      "type": "dir",
+      "tag": "aggregate",
+      "name": "{{ path }}",
+      "children": [
+      ]
+    },
+    {
+      "type": "dir",
+      "tag": "domain_event_handler",
+      "name": "{{ path }}",
+      "children": [
+      ]
+    },
+    {
+      "type": "dir",
+      "tag": "domain_event",
+      "name": "{{ path }}",
+      "children": [
+      ]
+    },
+    {
+      "type": "dir",
+      "tag": "factory",
+      "name": "{{ path }}",
+      "children": [
+      ]
+    },
+    {
+      "type": "dir",
+      "tag": "specification",
+      "name": "{{ path }}",
+      "children": [
+      ]
+    },
+    {
+      "type": "dir",
+      "tag": "entity",
+      "name": "{{ path }}",
+      "children": [
+      ]
+    },
+    {
+      "type": "dir",
+      "tag": "enum",
+      "name": "{{ path }}",
+      "children": [
+      ]
+    },
+    {
+      "type": "dir",
+      "tag": "schema_base",
+      "name": "{{ path }}",
+      "children": [
+      ]
+    }
+  ],
   "children": [
     {
       "type": "dir",
@@ -101,7 +270,8 @@
                                 },
                                 {
                                   "type": "dir",
-                                  "name": "repositories"
+                                  "name": "repositories",
+                                  "tag": "repository"
                                 }
                               ]
                             },
@@ -363,12 +533,19 @@
                           "children": [
                             {
                               "type": "dir",
-                              "name": "_share"
+                              "name": "_share",
+                              "children": [
+                                {
+                                  "type": "dir",
+                                  "name": "meta",
+                                  "tag": "schema_base,schema"
+                                }
+                              ]
                             },
                             {
                               "type": "dir",
                               "name": "aggregates",
-                              "tag": "aggregate,domain_event,factory,specification"
+                              "tag": "enum,entity,aggregate,domain_event,factory,specification"
                             },
                             {
                               "type": "dir",

@@ -1,5 +1,3 @@
-import jdk.tools.jlink.resources.plugins
-
 // The settings file is the entry point of every Gradle build.
 // Its primary purpose is to define the subprojects.
 // It is also used for some aspects of project-wide configuration, like managing plugins, dependencies, etc.
@@ -59,7 +57,4 @@ plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
 }
 
-rootProject.name = "codegen-plugin-template"
-
-includeBuild("../codegen-plugin")
-
+rootProject.name = "cap4k-template"
