@@ -1,48 +1,50 @@
-# cap4k Template
+# cap4k 项目模板
 
-[![Use this template](https://img.shields.io/badge/Use%20this%20template-2ea44f?style=for-the-badge&logo=github)](https://github.com/LDmoxeii/cap4k-template/generate)
+[![使用此模板](https://img.shields.io/badge/%E4%BD%BF%E7%94%A8%E6%AD%A4%E6%A8%A1%E6%9D%BF-2ea44f?style=for-the-badge&logo=github)](https://github.com/LDmoxeii/cap4k-template/generate)
 
-Click the button above to create your own project repository from this template. Then clone the new repository locally and start modeling your domain.
+点击上方按钮，基于 cap4k 官方模板创建你自己的项目仓库。创建完成后，将新仓库克隆到本地，就可以开始设计领域模型。
 
-This repository is the official four-module starting point for a cap4k project.
+本仓库是 cap4k 官方四模块项目起点。
 
-## Requirements
+## 环境要求
 
 - JDK 17
 
-## Create a project
+## 创建项目
 
-Use this repository as a GitHub Template or download it, then optionally rename the local directory and the default `com.example.demo` package once for your project. Keep the package used by `DemoApplication`, its test, and `cap4k.project.basePackage` aligned.
+通过上方按钮使用 GitHub Template 创建项目，也可以直接下载本仓库。创建后，可以按项目需要一次性重命名本地目录和默认包名 `com.example.demo`。
 
-The Gradle root project name follows the local directory name; the build does not set `rootProject.name`.
+请保持 `DemoApplication`、启动测试以及 `cap4k.project.basePackage` 使用的包名一致。
 
-## Build
+Gradle 根项目名称会跟随本地目录名；构建配置不会固定设置 `rootProject.name`。
+
+## 构建
 
 ```bash
 ./gradlew build
 ```
 
-On Windows:
+Windows：
 
 ```powershell
 .\gradlew.bat build
 ```
 
-## Run
+## 启动
 
 ```bash
 ./gradlew :start:bootRun
 ```
 
-## Generate sources
+## 生成源码
 
-The empty project has no schema or design input, so source generation is a successful no-op. A normal build runs the build-owned `cap4kGenerateSources` task automatically.
+初始空项目不包含 schema 或 design 输入，因此源码生成会成功执行并保持 no-op。普通构建会自动运行 build-owned 的 `cap4kGenerateSources` 任务。
 
-After adding the inputs needed by your project to the root `cap4k` configuration, inspect the plan before writing controlled source files:
+在根 `cap4k` 配置中加入项目需要的输入后，先检查生成计划，再写入受控源码：
 
 ```bash
 ./gradlew cap4kPlan
 ./gradlew cap4kGenerate
 ```
 
-Repeatable generated sources under `build/generated` remain wired into module compilation through `cap4kGenerateSources`.
+`build/generated` 下的可重复生成源码会通过 `cap4kGenerateSources` 自动接入对应模块的编译过程。
