@@ -1,5 +1,9 @@
 # cap4k Template
 
+[![Use this template](https://img.shields.io/badge/Use%20this%20template-2ea44f?style=for-the-badge&logo=github)](https://github.com/LDmoxeii/cap4k-template/generate)
+
+Click the button above to create your own project repository from this template. Then clone the new repository locally and start modeling your domain.
+
 This repository is the official four-module starting point for a cap4k project.
 
 ## Requirements
